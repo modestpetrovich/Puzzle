@@ -45,7 +45,7 @@ private:
     QVector<Piece> pieces;
     QRect highlightedRect;
     int inPlace;
-    int m_ImageSize;
+    int ImageSize;
 };
 
 #endif // PUZZLEWIDGET_H
