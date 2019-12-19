@@ -19,20 +19,23 @@ class PuzzleWidget : public QWidget
 public:
     explicit PuzzleWidget(int imageSize, QWidget *parent = nullptr);
     void clear();
+
     int pieceSize() const;
     int imageSize() const;
 
 signals:
     void puzzleCompleted();
+public slots:
+    void changeDivider(int Divider);
 
 protected:
-    void dragEnterEvent(QDragEnterEvent *event);
-    void dragLeaveEvent(QDragLeaveEvent *event);
-    void dragMoveEvent(QDragMoveEvent *event);
-    void dropEvent(QDropEvent *event);
-    void mousePressEvent(QMouseEvent *event);
-    void paintEvent(QPaintEvent *event);
-
+    void dragEnterEvent(QDragEnterEvent *event) override;
+    void dragLeaveEvent(QDragLeaveEvent *event) override;
+    void dragMoveEvent(QDragMoveEvent *event) override;
+    void dropEvent(QDropEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
+    void paintEvent(QPaintEvent *event) override;
+    int divider;
 private:
     struct Piece {
         QPixmap pixmap;
@@ -42,10 +45,11 @@ private:
 
     int findPiece(const QRect &pieceRect) const;
     const QRect targetSquare(const QPoint &position) const;
+
     QVector<Piece> pieces;
     QRect highlightedRect;
     int inPlace;
-    int ImageSize;
+    int m_ImageSize;
 };
 
 #endif // PUZZLEWIDGET_H
