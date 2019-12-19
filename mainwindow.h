@@ -4,10 +4,10 @@
 #include <QMainWindow>
 #include <QPixmap>
 
-class PiecesList;
 class PuzzleWidget;
+class PiecesModel;
 QT_BEGIN_NAMESPACE
-class QListWidgetItem;
+class QListView;
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
@@ -16,11 +16,12 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-    void loadImage(const QString &path);
 
 public slots:
     void openImage();
+    void loadImage(const QString &path);
     void setupPuzzle();
+    void setupPieceSize();
 
 private slots:
     void setCompleted();
@@ -29,9 +30,9 @@ private:
     void setupMenus();
     void setupWidgets();
 
-    QPixmap puzzleImage;
-    PiecesList *piecesList;
-    PuzzleWidget *puzzleWidget;
-};
 
-#endif // MAINWINDOW_H
+    QPixmap puzzleImage;
+    QListView *piecesList;
+    PuzzleWidget *puzzleWidget;
+    PiecesModel *model;
+};
