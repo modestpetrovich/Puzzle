@@ -17,11 +17,15 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
 
+signals:
+    void extraSgl(int value);
+
 public slots:
     void openImage();
     void loadImage(const QString &path);
     void setupPuzzle();
     void setupPieceSize();
+    void convertSignal();
 
 private slots:
     void setCompleted();
