@@ -50,7 +50,7 @@ void MainWindow::loadImage(const QString &fileName)
 void MainWindow::setCompleted()
 {
     QMessageBox::information(this, tr("Puzzle Completed"),
-                             tr("Congratulations! You have completed the puzzle!\n"
+                             tr("You won\n"
                                 "Click OK to start again."),
                              QMessageBox::Ok);
 
@@ -98,16 +98,22 @@ void MainWindow::setupPieceSize()
     QRadioButton* fiveSize = new QRadioButton("5x5", settings);
     QRadioButton* tenSize = new QRadioButton("10x10", settings);
 
-    connect(tenSize, SIGNAL(clicked()), puzzleWidget, SLOT(puzzleWidget->changeDivider(10)));
-    connect(threeSize, SIGNAL(clicked()), puzzleWidget, SLOT(puzzleWidget->changeDivider(3)));
-    connect(fiveSize, SIGNAL(clicked()), puzzleWidget, SLOT(puzzleWidget->changeDivider(5)));
-
     parametersLayout->addWidget(threeSize);
     parametersLayout->addWidget(fiveSize);
     parametersLayout->addWidget(tenSize);
 
+    connect(tenSize, SIGNAL(clicked()), this, SLOT(convertSignal()));
+    connect(threeSize, SIGNAL(clicked()), this, SLOT(convertSignal()));
+    connect(fiveSize, SIGNAL(clicked()), this, SLOT(convertSignal()));
+
     settings->show();
 }
+void MainWindow::convertSignal()
+{
+    int value;
+    emit extraSgl(value);
+}
+//void QRadioButton
 
 void MainWindow::setupWidgets()
 {
