@@ -40,3 +40,4 @@ private:
     PuzzleWidget *puzzleWidget;
     PiecesModel *model;
 };
+#endif // MAINWINDOW_H
