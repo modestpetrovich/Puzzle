@@ -159,8 +159,8 @@ void PiecesModel::addPieces(const QPixmap& pixmap)
         locations.clear();
         endRemoveRows();
     }
-    for (int y = 0; y < 5; ++y) {
-        for (int x = 0; x < 5; ++x) {
+    for (int y = 0; y < 3; ++y) {
+        for (int x = 0; x < 3; ++x) {
             QPixmap pieceImage = pixmap.copy(x*m_PieceSize, y*m_PieceSize, m_PieceSize, m_PieceSize);
             addPiece(pieceImage, QPoint(x, y));
         }
