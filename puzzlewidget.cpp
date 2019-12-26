@@ -5,7 +5,7 @@
 PuzzleWidget::PuzzleWidget(int imageSize, QWidget *parent)
     : QWidget(parent), m_ImageSize(imageSize)
 {
-    divider = 5;
+    divider = 3;
     setAcceptDrops(true);
     setMinimumSize(m_ImageSize, m_ImageSize);
     setMaximumSize(m_ImageSize, m_ImageSize);
