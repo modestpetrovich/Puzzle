@@ -81,39 +81,7 @@ void MainWindow::setupMenus()
     QMenu *gameMenu = menuBar()->addMenu(tr("&Game"));
 
     gameMenu->addAction(tr("&Restart"), this, &MainWindow::setupPuzzle);
-    gameMenu->addAction(tr("&Settings"), this, &MainWindow::setupPieceSize);
 }
-
-void MainWindow::setupPieceSize()
-{
-    QDialog* settings = new QDialog(this);
-    settings->setMinimumSize(300, 300);
-    settings->setMaximumSize(300, 300);
-    settings->setWindowTitle("Size of Puzzle");
-    QLabel* lbl = new QLabel(settings);
-    lbl->move(40, 0);
-
-    QVBoxLayout* parametersLayout = new QVBoxLayout(settings);
-    QRadioButton* threeSize = new QRadioButton("3x3", settings);
-    QRadioButton* fiveSize = new QRadioButton("5x5", settings);
-    QRadioButton* tenSize = new QRadioButton("10x10", settings);
-
-    parametersLayout->addWidget(threeSize);
-    parametersLayout->addWidget(fiveSize);
-    parametersLayout->addWidget(tenSize);
-
-    connect(tenSize, SIGNAL(clicked()), this, SLOT(convertSignal()));
-    connect(threeSize, SIGNAL(clicked()), this, SLOT(convertSignal()));
-    connect(fiveSize, SIGNAL(clicked()), this, SLOT(convertSignal()));
-
-    settings->show();
-}
-void MainWindow::convertSignal()
-{
-    int value;
-    emit extraSgl(value);
-}
-//void QRadioButton
 
 void MainWindow::setupWidgets()
 {
