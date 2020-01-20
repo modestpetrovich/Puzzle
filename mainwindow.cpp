@@ -109,4 +109,3 @@ void MainWindow::setupWidgets()
     frameLayout->addWidget(puzzleWidget);
     setCentralWidget(frame);
 }
-
