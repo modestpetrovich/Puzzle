@@ -36,3 +36,4 @@ private:
     PiecesModel *model;
 };
 #endif // MAINWINDOW_H
+
