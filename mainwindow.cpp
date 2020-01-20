@@ -87,7 +87,7 @@ void MainWindow::setupWidgets()
 {
     QFrame* frame = new QFrame;
     QHBoxLayout* frameLayout = new QHBoxLayout(frame);
-    puzzleWidget = new PuzzleWidget(400);
+    puzzleWidget = new PuzzleWidget(700);
 
     piecesList = new QListView;
     piecesList->setDragEnabled(true);
