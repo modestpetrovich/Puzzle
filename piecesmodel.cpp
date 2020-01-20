@@ -166,3 +166,5 @@ void PiecesModel::addPieces(const QPixmap& pixmap)
         }
     }
 }
+
+
