@@ -10,8 +10,3 @@ SOURCES     = main.cpp \
               piecesmodel.cpp \
               puzzlewidget.cpp
 
-# install
-target.path = $$[QT_INSTALL_EXAMPLES]/widgets/itemviews/puzzle
-INSTALLS += target
-
-DISTFILES +=
